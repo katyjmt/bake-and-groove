@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>*****UPDATE TITLE*****</title>
+</head>
+<body>
+    <div id="app-container">
+        <nav>
+            <img src="#" alt="logo" id="logo">
+            <h1>App Name</h1>
+            <div id="recipe-book"><a href="#">Recipe Book</a></div>
+        </nav>
+        <div id="page-1" class="page">
+            <img src="#" alt="logo" id="logo">
+            <button>Choose a Recipe</button> 
+        </div>
+        <div id="page-2" class="page">
+            <!-- Autocomplete guide https://www.w3schools.com/howto/howto_js_autocomplete.asp -->
+            <form autocomplete="off">
+                <div class="autocomplete">
+                    <input id="ingredient-input" type="text" name="keyIngredient" placeholder="Key Ingredient">
+                </div>
+                <button type="submit">Generate Recipes</button>
+                <button>Surprise Me</button>
+            </form>
+            <div id="recipe-options">
+                <div>Option 1</div>
+                <div>Option 2</div>
+                <div>Option 3</div>
+            </div>
+        </div>
+        <div id="page-3" class="page">
+            <main id="featured-recipe">
+                <div id="recipe-name">
+                    <h2>Recipe Name</h2>
+                </div>
+                <div id="recipe-instructions">
+                    <div id="ingredients">
+                        <h3>Ingredients:</h3>
+                        <ul>
+                            <li>A</li>
+                            <li>B</li>
+                            <li>C</li>
+                        </ul>
+                    </div>
+                    <div id="method">
+                        <h3>Method:</h3>
+                        <ol>
+                            <li>ABCDE</li>
+                            <li>FGHIJ</li>
+                        </ol>
+                    </div>
+                </div>
+            </main>
+            <aside id="spotify">
+                Spotify Bar (Add widget and playlist)
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
