@@ -48,7 +48,9 @@ h2 {
 
 #page-01 {
 
-    background-color: green;
+    background-image: url("../img/splashbg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
 
