@@ -65,6 +65,10 @@ h2 {
 
 }
 
+#logo-container {
+    z-index: 1;
+}
+
 #logo {
 
     z-index: 1;

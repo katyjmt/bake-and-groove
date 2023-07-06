@@ -56,3 +56,19 @@ for (i = 0; i < sArray_boxyBox.length; i++) {
 
 }
 
+//-------------transition
+
+const logo = document.querySelector("#logo-container");
+
+logo.addEventListener("click", function (e) {
+
+    console.log(e.target);
+    window.location = "#page-02";
+
+    // setTimeout(function () {
+
+    //     console.log("lol");
+
+    // }, 1000);
+
+});
