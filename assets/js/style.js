@@ -1,6 +1,5 @@
 //BOX EFFECT TODO:
-//make the div absolute so it won't affect the page layout
-//code refactor and
+//code refactor and clean code
 
 const vpHeight = window.innerHeight;
 const vpWidth = window.innerWidth;
@@ -14,7 +13,12 @@ console.log(vpWidth + " x " + vpHeight);
 for (i = 0; i < vpWidth * vpHeight; i += boxWidth * boxHeight) {
 
     let boxEl = document.createElement("div");
-    boxEl.setAttribute("style", `height: ${boxHeight}px; width: ${boxWidth}px; background-color: black; opacity: 0;`);
+    boxEl.setAttribute("style", `
+    height: ${boxHeight}px;
+    width: ${boxWidth}px;
+    background-color: black;
+    opacity: 0;
+    `);
     boxEl.setAttribute("class", "boxybox");
 
     s_boxEffect.append(boxEl);

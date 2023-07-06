@@ -49,6 +49,7 @@ h2 {
 
 #boxEffect {
 
+    position: absolute;
     display: flex;
     flex-wrap: wrap;
     height: 100%;
