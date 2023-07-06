@@ -22,7 +22,7 @@ nav {
 
     width: 100vw;
     height: var(--nav-height);
-    display: flex;
+    display: none;
     position: fixed;
 
     background-color: pink;
