@@ -74,8 +74,12 @@ s_logo.addEventListener("click", function () {
 
     window.location = "#page-02"; //go to page 02
 
-    //make the navbar appear
-    s_navbar.style.display = "flex";
+    //make the navbar appear after 1 second
+    setTimeout(function () {
+
+        s_navbar.style.display = "flex";
+
+    }, 1000);
 
     //remove page 01 from document after 5 seconds
     setTimeout(function () {
