@@ -14,7 +14,7 @@ body {
     margin: 0;
     overflow-x: scroll;
     /*To be changed to hidden later */
-    overflow-y: hidden;
+    overflow-y: scroll;
 
 }
 
@@ -22,6 +22,7 @@ nav {
 
     width: 100vw;
     height: var(--nav-height);
+    display: none;
     position: fixed;
 
     background-color: pink;
@@ -42,13 +43,45 @@ h2 {
     flex-wrap: wrap;
     flex-direction: column;
 
-    background-color: red;
+    /* background-color: red; */
+
+}
+
+#boxEffect {
+
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
 
 }
 
 #page-01 {
 
-    background-color: green;
+    background-image: url("../img/splashbg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#logo-container {
+    z-index: 1;
+}
+
+#logo {
+
+    z-index: 1;
+    width: 30rem;
+    height: 30rem;
+
+    transition: transform 1s;
+
+}
+
+#logo:hover {
+
+    transform: scale(1.5);
 
 }
 
@@ -104,6 +137,20 @@ h2 {
 .row-full {
 
     height: 90vh;
+
+}
+
+.clickable {
+
+    cursor: pointer;
+
+}
+
+.center-v-h {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 

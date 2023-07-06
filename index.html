@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 
+<!-- To do:
+remove splash page from code on click to continue -->
+
 <html lang="en">
 
 <head>
@@ -27,9 +30,13 @@
 
         <!-- PAGE 1 -->
 
-        <div id="page-01" class="page">
+        <div id="page-01" class="page center-v-h">
 
-            <a href="#page-02">Click to continue</a>
+            <!-- boxEffect is 'position:absolute' and will not change the structure of the page -->
+            <div id="boxEffect"></div>
+
+            <div id="logo-container"><img src="./assets/img/logo.png" alt="Logo of application: Bake and Groove"
+                    id="logo" class="clickable" /></div>
 
         </div>
 
@@ -156,6 +163,7 @@
 
         </div>
 
+        <script src="./assets/js/style.js"></script>
         <script src="./assets/js/script.js"></script>
 
 </body>
