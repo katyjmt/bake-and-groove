@@ -25,7 +25,25 @@ nav {
     display: none;
     position: fixed;
 
-    background-color: pink;
+    background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+nav :nth-child(1) {
+
+    min-width: 10%;
+
+}
+
+nav :nth-child(2) {
+
+    width: 80%;
+
+}
+
+nav :nth-child(3) {
+
+    min-width: 10%;
 
 }
 
@@ -82,6 +100,30 @@ h2 {
 #logo:hover {
 
     transform: scale(1.5);
+
+}
+
+#logo-nav {
+
+    width: 5rem;
+    height: 5rem;
+    max-height: 100%;
+
+}
+
+#recipe-book {
+
+    font-size: 3rem;
+    color: white;
+
+}
+
+#recipe-book:hover {
+
+    animation-name: pulse;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 
 }
 
@@ -177,5 +219,17 @@ h2 {
 #spotify-container {
 
     background-color: greenyellow;
+
+}
+
+@keyframes pulse {
+
+    0% {
+        transform: scale(1.0);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
 
 }

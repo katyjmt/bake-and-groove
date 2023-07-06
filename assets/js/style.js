@@ -68,10 +68,18 @@ for (i = 0; i < sArray_boxyBox.length; i++) {
 //LOGO EVENT LISTENER
 
 const s_logo = document.querySelector("#logo-container");
+const s_navbar = document.querySelector("nav");
 
 s_logo.addEventListener("click", function () {
 
     window.location = "#page-02"; //go to page 02
+
+    //make the navbar appear after 1 second
+    setTimeout(function () {
+
+        s_navbar.style.display = "flex";
+
+    }, 1000);
 
     //remove page 01 from document after 5 seconds
     setTimeout(function () {
@@ -79,5 +87,21 @@ s_logo.addEventListener("click", function () {
         s_page01.remove();
 
     }, 5000);
+
+});
+
+//RECIPE BOOK
+
+const s_recipeBook = document.querySelector("#recipe-book");
+
+s_recipeBook.addEventListener("mouseover", function () {
+
+    s_recipeBook.setAttribute("class", "fa-solid fa-book-open");
+
+});
+
+s_recipeBook.addEventListener("mouseleave", function () {
+
+    s_recipeBook.setAttribute("class", "fa-solid fa-book");
 
 });
