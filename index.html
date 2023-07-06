@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 
-<!-- To do:
-remove splash page from code on click to continue -->
-
 <html lang="en">
 
 <head>
@@ -13,16 +10,24 @@ remove splash page from code on click to continue -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>*****UPDATE TITLE*****</title>
 
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
 <body>
 
-    <nav>
-        <img src="#" alt="logo" id="logo">
+    <nav class="z-2">
 
-        <h1>App Name</h1>
+        <!--Closed book: <i class="fa-solid fa-book"></i> -->
+        <!--Open book: <i class="fa-solid fa-book-open-cover"></i> -->
 
-        <div id="recipe-book"><a href="#">Recipe Book</a></div>
+        <div class="flex justify-center items-center"><img src="./assets/img/logo.png" alt="logo" id="logo-nav"></div>
+
+        <div></div>
+
+        <div class="flex justify-center items-center">
+            <div id="recipe-book" class="fa-solid fa-book"></div>
+        </div>
 
     </nav>
 
@@ -165,6 +170,7 @@ remove splash page from code on click to continue -->
 
         <script src="./assets/js/style.js"></script>
         <script src="./assets/js/script.js"></script>
+        <script src="https://kit.fontawesome.com/c669b4808b.js" crossorigin="anonymous"></script>
 
 </body>
 

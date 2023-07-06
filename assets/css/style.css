@@ -22,10 +22,28 @@ nav {
 
     width: 100vw;
     height: var(--nav-height);
-    display: none;
+    display: flex;
     position: fixed;
 
     background-color: pink;
+
+}
+
+nav :nth-child(1) {
+
+    min-width: 10%;
+
+}
+
+nav :nth-child(2) {
+
+    width: 80%;
+
+}
+
+nav :nth-child(3) {
+
+    min-width: 10%;
 
 }
 
@@ -82,6 +100,20 @@ h2 {
 #logo:hover {
 
     transform: scale(1.5);
+
+}
+
+#logo-nav {
+
+    width: 5rem;
+    height: 5rem;
+    max-height: 100%;
+
+}
+
+#recipe-book {
+
+    font-size: 3rem;
 
 }
 

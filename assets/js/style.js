@@ -68,10 +68,14 @@ for (i = 0; i < sArray_boxyBox.length; i++) {
 //LOGO EVENT LISTENER
 
 const s_logo = document.querySelector("#logo-container");
+const s_navbar = document.querySelector("nav");
 
 s_logo.addEventListener("click", function () {
 
     window.location = "#page-02"; //go to page 02
+
+    //make the navbar appear
+    s_navbar.style.display = flex;
 
     //remove page 01 from document after 5 seconds
     setTimeout(function () {
