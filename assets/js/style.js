@@ -4,9 +4,9 @@
 
 const vpHeight = window.innerHeight;
 const vpWidth = window.innerWidth;
-const boxWidth = 75;
-const boxHeight = 75;
-const fadeInitialLevel = 0.5;
+const boxWidth = 100;
+const boxHeight = 100;
+const fadeInitialLevel = 0.2;
 const s_boxEffect = document.querySelector("#boxEffect");
 
 console.log(vpWidth + " x " + vpHeight);
@@ -46,7 +46,7 @@ for (i = 0; i < sArray_boxyBox.length; i++) {
 
             }
 
-        }, 50);
+        }, 100);
 
     });
 
