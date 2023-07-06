@@ -114,6 +114,16 @@ h2 {
 #recipe-book {
 
     font-size: 3rem;
+    color: white;
+
+}
+
+#recipe-book:hover {
+
+    animation-name: pulse;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 
 }
 
@@ -209,5 +219,17 @@ h2 {
 #spotify-container {
 
     background-color: greenyellow;
+
+}
+
+@keyframes pulse {
+
+    0% {
+        transform: scale(1.0);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
 
 }

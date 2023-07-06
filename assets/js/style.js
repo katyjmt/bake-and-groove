@@ -89,3 +89,19 @@ s_logo.addEventListener("click", function () {
     }, 5000);
 
 });
+
+//RECIPE BOOK
+
+const s_recipeBook = document.querySelector("#recipe-book");
+
+s_recipeBook.addEventListener("mouseover", function () {
+
+    s_recipeBook.setAttribute("class", "fa-solid fa-book-open");
+
+});
+
+s_recipeBook.addEventListener("mouseleave", function () {
+
+    s_recipeBook.setAttribute("class", "fa-solid fa-book");
+
+});
