@@ -47,47 +47,52 @@
 
         <!-- PAGE 2 -->
 
-        <div id="page-02" class="page">
+        <div id="page-02" class="page dark:bg-slate-800 flex justify-center items-center">
 
             <!-- Autocomplete guide https://www.w3schools.com/howto/howto_js_autocomplete.asp -->
-            <form autocomplete="off">
+            <div class="">
 
-                <div class="autocomplete">
+                <form autocomplete="off">
 
-                    <input id="ingredient-input" list="ingredients" name="keyIngredient" placeholder="Key Ingredient">
-                    <datalist id="ingredients">
+                    <div class="autocomplete">
 
-                        <option value="american">
-                        <option value="asian">
-                        <option value="british">
-                        <option value="caribbean">
-                        <option value="central europe">
-                        <option value="chinese">
-                        <option value="eastern europe">
-                        <option value="french">
-                        <option value="greek">
-                        <option value="indian">
-                        <option value="italian">
-                        <option value="japanese">
-                        <option value="korean">
-                        <option value="kosher">
-                        <option value="mediterranian">
-                        <option value="mexican">
-                        <option value="middle eastern">
-                        <option value="nordic">
-                        <option value="south american">
-                        <option value="south east asian">
-                        <option value="world">
+                        <input id="ingredient-input" list="ingredients" name="keyIngredient"
+                            placeholder="Key Ingredient">
+                        <datalist id="ingredients">
 
-                    </datalist>
+                            <option value="american">
+                            <option value="asian">
+                            <option value="british">
+                            <option value="caribbean">
+                            <option value="central europe">
+                            <option value="chinese">
+                            <option value="eastern europe">
+                            <option value="french">
+                            <option value="greek">
+                            <option value="indian">
+                            <option value="italian">
+                            <option value="japanese">
+                            <option value="korean">
+                            <option value="kosher">
+                            <option value="mediterranian">
+                            <option value="mexican">
+                            <option value="middle eastern">
+                            <option value="nordic">
+                            <option value="south american">
+                            <option value="south east asian">
+                            <option value="world">
 
-                </div>
+                        </datalist>
 
-                <button id="generate-recipe" type="submit">Generate Recipes</button>
+                    </div>
 
-                <!-- <button id="surprise-me">Surprise Me</button> -->
+                    <button id="generate-recipe" type="submit">Generate Recipes</button>
 
-            </form>
+                    <!-- <button id="surprise-me">Surprise Me</button> -->
+
+                </form>
+
+            </div>
 
             <!-- To be a modal/popup box :: The option clicked, will be the option parsed to page 03 and the spotify API -->
             <div id="recipe-options">

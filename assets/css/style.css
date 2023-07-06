@@ -129,7 +129,7 @@ h2 {
 
 #page-02 {
 
-    background-color: yellow;
+    /* background-color: yellow; */
     padding-top: var(--nav-height);
 
 }
