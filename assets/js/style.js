@@ -1,3 +1,5 @@
+const s_page01 = document.querySelector("#page-01");
+
 //BOX EFFECT TODO:
 //code refactor and clean code
 
@@ -56,19 +58,20 @@ for (i = 0; i < sArray_boxyBox.length; i++) {
 
 }
 
-//-------------transition
+//logo event listener
 
-const logo = document.querySelector("#logo-container");
 
-logo.addEventListener("click", function (e) {
+const s_logo = document.querySelector("#logo-container");
 
-    console.log(e.target);
-    window.location = "#page-02";
+s_logo.addEventListener("click", function () {
 
-    // setTimeout(function () {
+    window.location = "#page-02"; //go to page 02
 
-    //     console.log("lol");
+    //remove page 01 from document after 5 seconds
+    setTimeout(function () {
 
-    // }, 1000);
+        s_page01.remove();
+
+    }, 5000);
 
 });
