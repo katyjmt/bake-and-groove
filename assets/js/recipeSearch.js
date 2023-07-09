@@ -1,10 +1,12 @@
 // Select HTML elements for DOM Manipulation
 const $recipeAreas = $('#recipe-areas'); // Select page 2 datalist dropdown with area options
+const $recipeAreaInput = $('#area-input'); // Select input field for area
+const $generateRecipeButton = $('#generate-recipe');
 
-
-// const recipeData = []; // variable to store pages of data (Edamam API returns 20 recipes at a time)
-const areaList = [];
-const chosenRecipes = [];
+// Set up variables to add data to
+const areaList = []; // List of available areas from API
+// const chosenRecipes = [];
+let $areaSelected = ''; // User-selected area from dropdown
 
 // Asynchronous function to fetch area data from the Edamam API and add to areaList variable
 async function sendAreaAPIRequest () {
@@ -18,11 +20,24 @@ async function sendAreaAPIRequest () {
     console.log(areaList);
     // Populate area list dropdown with areaList items
     for (i = 0; i < areaList.length; i++) {
-        let $areaDropdownEl = $('option').val(areaList[i]);
+        let $areaDropdownEl = $('<option>').val(areaList[i]).addClass('area-options');
         $recipeAreas.append($areaDropdownEl);
     }
 }
 sendAreaAPIRequest();
+
+// Event listener to trigger asynchronous function to fetch recipes using user-selected Area
+$generateRecipeButton.on('click', function(event) {
+    event.preventDefault();
+    $areaSelected = $recipeAreaInput.val();
+    async function sendRecipeAPIRequest () {
+        let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${$areaSelected}`)
+        console.log(response);
+        let data = await response.json();
+        console.log(data);
+    }
+    sendRecipeAPIRequest();
+})
 
 
 
