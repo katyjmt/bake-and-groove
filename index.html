@@ -14,9 +14,9 @@
 
 </head>
 
-<body>
+<body class="font-sans">
 
-    <nav class="z-2">
+    <nav class="z-2 bg-amber-600">
 
         <!--Closed book: <i class="fa-solid fa-book"></i> -->
         <!--Open book: <i class="fa-solid fa-book-open"></i> -->
@@ -47,17 +47,22 @@
 
         <!-- PAGE 2 -->
 
-        <div id="page-02" class="page dark:bg-slate-800 flex justify-center items-center">
+        <div id="page-02"
+            class="page flex flex-col justify-center items-center bg-gradient-to-t from-amber-300 to-amber-200">
+
+
 
             <!-- Autocomplete guide https://www.w3schools.com/howto/howto_js_autocomplete.asp -->
-            <div class="">
+            <div id="page-02-content" class="flex flex-col p-8 rounded bg-amber-500">
+
+                <h2 class="mb-5 text-white text-4xl tracking-widest">Choose your cuisine</h2>
 
                 <form autocomplete="off">
 
-                    <div class="autocomplete">
+                    <div class="autocomplete mb-2">
 
-                        <input id="ingredient-input" list="ingredients" name="keyIngredient"
-                            placeholder="Key Ingredient">
+                        <input id="ingredient-input" list="ingredients" name="keyIngredient" placeholder="American"
+                            class="bg-white p-2 rounded hover:shadow-md">
                         <datalist id="ingredients">
 
                             <option value="american">
@@ -86,20 +91,13 @@
 
                     </div>
 
-                    <button id="generate-recipe" type="submit">Generate Recipes</button>
+                    <button id="generate-recipe" type="submit"
+                        class="p-2 rounded text-white hover:text-amber-200">Create
+                        Recipes</button>
 
                     <!-- <button id="surprise-me">Surprise Me</button> -->
 
                 </form>
-
-            </div>
-
-            <!-- To be a modal/popup box :: The option clicked, will be the option parsed to page 03 and the spotify API -->
-            <div id="recipe-options">
-
-                <div id="recipe-option-01">Option 1</div>
-                <div id="recipe-option-02">Option 2</div>
-                <div id="recipe-option-03">Option 3</div>
 
             </div>
 

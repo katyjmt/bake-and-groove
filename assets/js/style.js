@@ -88,6 +88,19 @@ s_logo.addEventListener("click", function () {
 
     }, 5000);
 
+    //fade in page-02 content
+
+    const s_p2Content = document.querySelector("#page-02-content");
+
+    setTimeout(function () {
+
+
+        s_p2Content.style.opacity = 1;
+        s_p2Content.style.paddingTop = 80 + "px";
+        s_p2Content.style.paddingBottom = 80 + "px";
+
+    }, 2000);
+
 });
 
 //RECIPE BOOK
