@@ -7,6 +7,7 @@ const $generateRecipeButton = $('#generate-recipe');
 const areaList = []; // List of available areas from API
 // const chosenRecipes = [];
 let $areaSelected = ''; // User-selected area from dropdown
+let mealOptions = [];
 
 // Asynchronous function to fetch area data from the Edamam API and add to areaList variable
 async function sendAreaAPIRequest () {
@@ -14,12 +15,12 @@ async function sendAreaAPIRequest () {
     console.log(response);
     let data = await response.json();
     console.log(data);
-    for (i = 0; i < data.meals.length; i++) {
+    for (let i = 0; i < data.meals.length; i++) {
         areaList.push(data.meals[i].strArea);
     };
     console.log(areaList);
     // Populate area list dropdown with areaList items
-    for (i = 0; i < areaList.length; i++) {
+    for (let i = 0; i < areaList.length; i++) {
         let $areaDropdownEl = $('<option>').val(areaList[i]).addClass('area-options');
         $recipeAreas.append($areaDropdownEl);
     }
@@ -35,6 +36,18 @@ $generateRecipeButton.on('click', function(event) {
         console.log(response);
         let data = await response.json();
         console.log(data);
+        // Loop through recipe data to get IDs of each, then trigger async function to fetch specifics of each recipe
+        for (let i = 0; i < data.meals.length; i++) {
+            let recipeId = data.meals[i].idMeal;
+            (function (index) {
+                async function sendRecipeDetailAPIRequest () {
+                    let response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`)
+                    let data = await response.json();
+                    mealOptions.push(data.meals[index]);
+                }
+                sendRecipeDetailAPIRequest();
+            })(i);
+        }
     }
     sendRecipeAPIRequest();
 })
