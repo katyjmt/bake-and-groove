@@ -49,10 +49,10 @@ remove splash page from code on click to continue -->
 
                 <div class="autocomplete">
 
-                    <input id="ingredient-input" list="ingredients" name="keyIngredient" placeholder="Key Ingredient">
-                    <datalist id="ingredients">
+                    <input id="area-input" list="recipe-areas" name="recipeArea" placeholder="Recipe Area">
+                    <datalist id="recipe-areas">
 
-                        <option value="american">
+                        <!-- <option value="american">
                         <option value="asian">
                         <option value="british">
                         <option value="caribbean">
@@ -72,7 +72,7 @@ remove splash page from code on click to continue -->
                         <option value="nordic">
                         <option value="south american">
                         <option value="south east asian">
-                        <option value="world">
+                        <option value="world"> -->
 
                     </datalist>
 
@@ -101,69 +101,24 @@ remove splash page from code on click to continue -->
 
             <div id="page-03-container">
 
-                <div>
-
-                    <h2 id="recipe-name" class="col-01">RECIPE NAME</h2>
-
-                    <div id="ingredients" class="col-01">ingredients</div>
-
+                <div id="recipe-embed" class="col-01 row-full">
+                    <!-- <embed src="https://www.foodrepublic.com/recipes/grilled-blt-pizza-recipe/" style="width:100%; height: 100%;"> -->
                 </div>
 
-
-                <div id="method" class="col-02 row-full">method</div>
-
-                <div id="spotify-container" class="col-03 row-full">SPOTIFEHHHH</div>
+                <div id="spotify-container" class="col-02 row-full">
+                    <!-- <iframe style="border-radius:12px"
+                        src="https://open.spotify.com/embed/playlist/0o6VXg3Ce3gtvXEU7AQle3" width="100%" height="100%"
+                        frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe> -->
+                </div>
 
             </div>
 
-
-            <!-- <div id="recipe-name">
-
-                    <h2>Recipe Name</h2>
-
-                </div>
-
-                <div id="recipe-instructions">
-
-                    <div id="ingredients">
-
-                        <h3>Ingredients:</h3>
-
-                        <ul>
-
-                            <li>A</li>
-                            <li>B</li>
-                            <li>C</li>
-
-                        </ul>
-
-                    </div>
-
-                    <div id="method">
-
-                        <h3>Method:</h3>
-
-                        <ol>
-
-                            <li>ABCDE</li>
-
-                            <li>FGHIJ</li>
-
-                        </ol>
-
-                    </div>
-
-                </div>
-
-            <aside id="spotify">
-                Spotify Bar (Add widget and playlist)
-            </aside>
-
-        </div> -->
-
         </div>
-
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
         <script src="./assets/js/style.js"></script>
+        <script src="./assets/js/recipeSearch.js"></script>
         <script src="./assets/js/script.js"></script>
 
 </body>
