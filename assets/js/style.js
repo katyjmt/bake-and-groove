@@ -90,8 +90,8 @@ s_logo.addEventListener("click", function () {
     setTimeout(function () {
 
         s_p2Content.style.opacity = 1;
-        s_p2Content.style.paddingTop = 80 + "px";
-        s_p2Content.style.paddingBottom = 80 + "px";
+        s_p2Content.style.paddingTop = 60 + "px";
+        s_p2Content.style.paddingBottom = 60 + "px";
 
     }, 600);
 
