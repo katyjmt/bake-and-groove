@@ -74,12 +74,8 @@ s_logo.addEventListener("click", function () {
 
     window.location = "#page-02"; //go to page 02
 
-    //make the navbar appear after 1 second
-    setTimeout(function () {
-
-        s_navbar.style.display = "flex";
-
-    }, 1000);
+    //make the navbar appear
+    s_navbar.style.opacity = 1;
 
     //remove page 01 from document after 5 seconds
     setTimeout(function () {
@@ -87,6 +83,17 @@ s_logo.addEventListener("click", function () {
         s_page01.remove();
 
     }, 5000);
+
+    //fade in page-02 content
+    const s_p2Content = document.querySelector("#page-02-content");
+
+    setTimeout(function () {
+
+        s_p2Content.style.opacity = 1;
+        s_p2Content.style.paddingTop = 60 + "px";
+        s_p2Content.style.paddingBottom = 60 + "px";
+
+    }, 600);
 
 });
 

@@ -14,9 +14,9 @@
 
 </head>
 
-<body>
+<body class="font-sans">
 
-    <nav class="z-2">
+    <nav class="z-2 bg-amber-600">
 
         <!--Closed book: <i class="fa-solid fa-book"></i> -->
         <!--Open book: <i class="fa-solid fa-book-open"></i> -->
@@ -47,30 +47,64 @@
 
         <!-- PAGE 2 -->
 
-        <div id="page-02" class="page">
+        <div id="page-02"
+            class="page flex flex-col justify-center items-center bg-gradient-to-t from-amber-300 to-amber-200">
 
             <!-- Autocomplete guide https://www.w3schools.com/howto/howto_js_autocomplete.asp -->
-            <form autocomplete="off">
+            <div id="page-02-content" class="flex flex-col p-8 rounded bg-amber-500">
 
-                <div class="autocomplete">
+                <h2 class="mb-5 text-white text-4xl tracking-widest">Choose your cuisine</h2>
 
-                    <input id="area-input" list="recipe-areas" name="recipeArea" placeholder="Recipe Area">
-                    <datalist id="recipe-areas"></datalist> 
+                <form autocomplete="off">
 
+                    <div class="autocomplete mb-2">
+
+                        <input id="area-input" list="recipe-areas" name="recipeArea" placeholder="Recipe Area"
+                            class="bg-white p-2 rounded hover:shadow-md">
+                        <datalist id="recipe-areas">
+
+                            <option value="american">
+                            <option value="asian">
+                            <option value="british">
+                            <option value="caribbean">
+                            <option value="central europe">
+                            <option value="chinese">
+                            <option value="eastern europe">
+                            <option value="french">
+                            <option value="greek">
+                            <option value="indian">
+                            <option value="italian">
+                            <option value="japanese">
+                            <option value="korean">
+                            <option value="kosher">
+                            <option value="mediterranian">
+                            <option value="mexican">
+                            <option value="middle eastern">
+                            <option value="nordic">
+                            <option value="south american">
+                            <option value="south east asian">
+                            <option value="world">
+
+                        </datalist>
+
+                    </div>
+
+                    <button id="generate-recipe" type="submit"
+                        class="p-2 rounded text-white hover:text-amber-200">Create
+                        Recipes</button>
+
+                  <!-- <button id="surprise-me">Surprise Me</button> -->
+
+                </form>
+
+                <!-- To be a modal/popup box :: The option clicked, will be the option parsed to page 03 and the spotify API -->
+                <div id="recipe-options-modal" class="modal">
+                    <div class="recipe-modal-content">
+                        <span class="close">&times;</span>
+                        <p>some text in the modal</p>
+                    </div>
                 </div>
 
-                <button id="generate-recipe" type="submit">Generate Recipes</button>
-
-                <!-- <button id="surprise-me">Surprise Me</button> -->
-
-            </form>
-
-            <!-- To be a modal/popup box :: The option clicked, will be the option parsed to page 03 and the spotify API -->
-            <div id="recipe-options-modal" class="modal">
-                <div class="recipe-modal-content">
-                    <span class="close">&times;</span>
-                    <p>some text in the modal</p>
-                </div>
             </div>
 
         </div>

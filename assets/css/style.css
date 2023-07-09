@@ -22,10 +22,13 @@ nav {
 
     width: 100vw;
     height: var(--nav-height);
-    display: none;
+    display: flex;
     position: fixed;
+    opacity: 0;
 
     background-color: rgba(0, 0, 0, 0.8);
+
+    transition: opacity 3s;
 
 }
 
@@ -129,8 +132,15 @@ h2 {
 
 #page-02 {
 
-    background-color: yellow;
+    /* background-color: yellow; */
     padding-top: var(--nav-height);
+
+}
+
+#page-02-content {
+
+    opacity: 0;
+    transition: padding-top 2s, padding-bottom 2s, opacity 2s;
 
 }
 
