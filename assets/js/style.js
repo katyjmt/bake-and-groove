@@ -101,10 +101,10 @@ s_logo.addEventListener("click", function () {
 
 const s_recipeBookIcon = document.querySelector("#recipe-book-icon");
 const s_recipeBookContainer = document.querySelector("#recipe-book-container");
+const s_exitNav = document.querySelector("#exit-nav");
 
 s_recipeBookIcon.addEventListener("click", function () {
 
-    console.log("lol");
     s_recipeBookContainer.style.display = "block";
 
     //Fade in effect
@@ -113,6 +113,21 @@ s_recipeBookIcon.addEventListener("click", function () {
         s_recipeBookContainer.style.opacity = 1;
 
     }, 100);
+
+
+});
+
+s_exitNav.addEventListener("click", function () {
+
+    //Fade out effect
+    s_recipeBookContainer.style.opacity = 0;
+
+    setTimeout(function () {
+
+        s_recipeBookContainer.style.display = "none";
+
+    }, 1000);
+
 
 
 });
