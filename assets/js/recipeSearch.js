@@ -28,28 +28,52 @@ async function sendAreaAPIRequest () {
 sendAreaAPIRequest();
 
 // Event listener to trigger asynchronous function to fetch recipes using user-selected Area
-$generateRecipeButton.on('click', function(event) {
+$generateRecipeButton.on('click', async function(event) {
     event.preventDefault();
+    // Update modal class to display:block
+    const $recipeModal = $('#recipe-options-modal'); // Select recipe modal
+    $recipeModal.removeClass('hidden').addClass('block');
+
     $areaSelected = $recipeAreaInput.val();
-    async function sendRecipeAPIRequest () {
-        let response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${$areaSelected}`)
-        console.log(response);
-        let data = await response.json();
-        console.log(data);
-        // Loop through recipe data to get IDs of each, then trigger async function to fetch specifics of each recipe
-        for (let i = 0; i < data.meals.length; i++) {
-            let recipeId = data.meals[i].idMeal;
-            (function (index) {
-                async function sendRecipeDetailAPIRequest () {
-                    let response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`)
-                    let data = await response.json();
-                    mealOptions[index] = data.meals[0];
-                }
-                sendRecipeDetailAPIRequest();
-            })(i);
-        }
+     
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${$areaSelected}`)
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+    // Loop through recipe data to get IDs of each, then trigger async function to fetch specifics of each recipe
+
+    const promiseArr = [];
+    for (const meal of data.meals) {
+        let recipeId = meal.idMeal;
+        promiseArr.push(fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`));
     }
-    sendRecipeAPIRequest();
+    const mealRequests = await Promise.all(promiseArr);
+    console.log(mealRequests);
+
+    const mealDataArr = [];
+    for (const request of mealRequests) {
+        mealDataArr.push(request.json());
+    }
+
+    const mealData = await Promise.all(mealDataArr);
+    console.log(mealData)
+
+    // Populate recipe cards in modal
+    const $recipeContainer = $('#recipe-container'); // Select recipe container div within modal
+
+    for (let i = 0; i < mealData.length; i++) {
+        const recipeTitle = mealData[i].meals[0].strMeal;
+        const recipeImageURL = mealData[i].meals[0].strMealThumb;
+        const $recipeCardDivEl = $('<div>').addClass('w-1/3 bg-gray-400');
+        const $recipeTitleEl = $('<h3>').addClass('text-3xl text-center').append(recipeTitle);
+        const $recipeImageEl = $('<img>').attr({
+            src: recipeImageURL,
+          });
+        $recipeCardDivEl.append($recipeTitleEl).append($recipeImageEl);
+        $recipeContainer.append($recipeCardDivEl);
+        
+
+    }
 })
 
 

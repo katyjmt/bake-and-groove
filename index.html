@@ -73,14 +73,17 @@
 
                 </form>
 
-                <!-- To be a modal/popup box :: The option clicked, will be the option parsed to page 03 and the spotify API -->
-                <div id="recipe-options-modal" class="modal">
-                    <div class="recipe-modal-content">
-                        <span class="close">&times;</span>
-                        <p>some text in the modal</p>
+            </div>
+
+            <!-- To be a modal/popup box :: The option clicked, will be the option parsed to page 03 and the spotify API -->
+            <div id="recipe-options-modal" class="modal bg-white/[.8] w-2/3 h-2/3 fixed z-10 hidden">
+                <div class="recipe-modal-content">
+                    <span class="close">&times;</span>
+                    <h2 class="text-4xl"><span id="user-choice-cuisine"></span> Recipes:</h2>
+                    <div id="recipe-container" class="flex flex-wrap justify-evenly">
+
                     </div>
                 </div>
-
             </div>
 
         </div>
