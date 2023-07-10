@@ -77,12 +77,12 @@ s_logo.addEventListener("click", function () {
     //make the navbar appear
     s_navbar.style.opacity = 1;
 
-    //remove page 01 from document after 5 seconds
-    setTimeout(function () {
+    //remove page 01 from document after 3 seconds
+    // setTimeout(function () {
 
-        s_page01.remove();
+    //     s_page01.remove();
 
-    }, 5000);
+    // }, 3000);
 
     //fade in page-02 content
     const s_p2Content = document.querySelector("#page-02-content");
@@ -100,7 +100,15 @@ s_logo.addEventListener("click", function () {
 //RECIPE BOOK
 
 const s_recipeBookIcon = document.querySelector("#recipe-book-icon");
-const s_recipeBook = document.querySelector("#recipe-book-container");
+const s_recipeBookContainer = document.querySelector("#recipe-book-container");
+
+s_recipeBookIcon.addEventListener("click", function () {
+
+    console.log("lol");
+    s_recipeBookContainer.style.display = "block";
+    // s_recipeBookContainer.style.opacity = 1;
+
+});
 
 s_recipeBookIcon.addEventListener("mouseover", function () {
 
@@ -113,3 +121,4 @@ s_recipeBookIcon.addEventListener("mouseleave", function () {
     s_recipeBookIcon.setAttribute("class", "fa-solid fa-book");
 
 });
+
