@@ -210,11 +210,19 @@ h2 {
 
 }
 
-.nav-icon:hover {
+.nav-icon-p:hover {
 
     animation-name: pulse;
     animation-duration: 0.5s;
     animation-direction: alternate;
+    animation-iteration-count: infinite;
+
+}
+
+.nav-icon-pf:hover {
+
+    animation-name: pulse-flick;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
 
 }
@@ -323,6 +331,40 @@ h2 {
 
     100% {
         transform: scale(1.1);
+    }
+
+}
+
+@keyframes pulse-flick {
+
+    0% {
+        /* transform: scale(1.0); */
+        transform: rotate(0deg);
+    }
+
+    0% {
+        transform: scale(1.0);
+        /* transform: rotate(0deg); */
+    }
+
+    25% {
+        /* transform: scale(1.2); */
+        transform: rotate(90deg);
+    }
+
+    25% {
+        transform: scale(1.2);
+        /* transform: rotate(90deg); */
+    }
+
+    50% {
+        /* transform: scale(1.0); */
+        transform: rotate(90deg);
+    }
+
+    100% {
+        /* transform: scale(1.2); */
+        transform: rotate(180deg);
     }
 
 }

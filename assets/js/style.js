@@ -132,13 +132,13 @@ s_exitNav.addEventListener("click", function () {
 
 s_recipeBookIcon.addEventListener("mouseover", function () {
 
-    s_recipeBookIcon.setAttribute("class", "fa-solid fa-book-open nav-icon");
+    s_recipeBookIcon.setAttribute("class", "fa-solid fa-book-open nav-icon nav-icon-p");
 
 });
 
 s_recipeBookIcon.addEventListener("mouseleave", function () {
 
-    s_recipeBookIcon.setAttribute("class", "fa-solid fa-book nav-icon");
+    s_recipeBookIcon.setAttribute("class", "fa-solid fa-book nav-icon nav-icon-p");
 
 });
 
