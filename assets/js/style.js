@@ -105,7 +105,7 @@ const s_recipeBookContainer = document.querySelector("#recipe-book-container");
 s_recipeBookIcon.addEventListener("click", function () {
 
     console.log("lol");
-    s_recipeBookContainer.style.display = "flex";
+    s_recipeBookContainer.style.display = "block";
 
     //Fade in effect
     setTimeout(function () {
