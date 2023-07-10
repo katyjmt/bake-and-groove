@@ -40,7 +40,7 @@ body {
     align-items: center;
     padding-right: 5rem;
 
-    background-color: red;
+    /* background-color: red; */
 
 }
 
@@ -50,10 +50,63 @@ body {
     height: 90%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 
-    background-color: green;
+    /* background-color: green; */
 
+}
+
+#recipe-book-content div {
+
+    width: 80%;
+    height: 90%;
+    box-sizing: border-box;
+    padding: 3rem;
+    border-radius: 1rem;
+
+    background-color: rgb(255, 255, 255);
+
+}
+
+#recipe-book-content div h2 {
+
+    font-size: 3rem;
+    color: black;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5rem;
+
+}
+
+#recipe-book-content div section {
+
+    height: 100%;
+
+}
+
+#recipe-book-content div ul {
+
+    border-radius: 1rem;
+    max-height: 80%;
+    overflow-y: scroll;
+
+}
+
+#recipe-book-content div li {
+
+    box-sizing: border-box;
+    padding: 0.5rem;
+
+}
+
+#recipe-book-content div li:nth-child(odd) {
+
+    background-color: rgb(233, 233, 233);
+
+}
+
+#recipe-book-content div li:hover {
+
+    background-color: rgb(255, 226, 132);
 }
 
 nav {

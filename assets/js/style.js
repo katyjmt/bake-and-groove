@@ -112,7 +112,7 @@ s_recipeBookIcon.addEventListener("click", function () {
 
         s_recipeBookContainer.style.opacity = 1;
 
-    }, 100);
+    }, 10);
 
 
 });
@@ -128,19 +128,17 @@ s_exitNav.addEventListener("click", function () {
 
     }, 1000);
 
-
-
 });
 
 s_recipeBookIcon.addEventListener("mouseover", function () {
 
-    s_recipeBookIcon.setAttribute("class", "fa-solid fa-book-open");
+    s_recipeBookIcon.setAttribute("class", "fa-solid fa-book-open nav-icon");
 
 });
 
 s_recipeBookIcon.addEventListener("mouseleave", function () {
 
-    s_recipeBookIcon.setAttribute("class", "fa-solid fa-book");
+    s_recipeBookIcon.setAttribute("class", "fa-solid fa-book nav-icon");
 
 });
 
