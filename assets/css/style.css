@@ -18,6 +18,14 @@ body {
 
 }
 
+#recipe-book-container {
+
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: opacity 1s;
+
+}
+
 nav {
 
     width: 100vw;
@@ -114,9 +122,9 @@ h2 {
 
 }
 
-#recipe-book {
+#recipe-book-icon {
 
-    font-size: 3rem;
+    font-size: 2rem;
     color: white;
 
 }

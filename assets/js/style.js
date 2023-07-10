@@ -99,16 +99,17 @@ s_logo.addEventListener("click", function () {
 
 //RECIPE BOOK
 
-const s_recipeBook = document.querySelector("#recipe-book");
+const s_recipeBookIcon = document.querySelector("#recipe-book-icon");
+const s_recipeBook = document.querySelector("#recipe-book-container");
 
-s_recipeBook.addEventListener("mouseover", function () {
+s_recipeBookIcon.addEventListener("mouseover", function () {
 
-    s_recipeBook.setAttribute("class", "fa-solid fa-book-open");
+    s_recipeBookIcon.setAttribute("class", "fa-solid fa-book-open");
 
 });
 
-s_recipeBook.addEventListener("mouseleave", function () {
+s_recipeBookIcon.addEventListener("mouseleave", function () {
 
-    s_recipeBook.setAttribute("class", "fa-solid fa-book");
+    s_recipeBookIcon.setAttribute("class", "fa-solid fa-book");
 
 });
