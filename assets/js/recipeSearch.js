@@ -43,7 +43,7 @@ $generateRecipeButton.on('click', function(event) {
                 async function sendRecipeDetailAPIRequest () {
                     let response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`)
                     let data = await response.json();
-                    mealOptions.push(data.meals[index]);
+                    mealOptions[index] = data.meals[0];
                 }
                 sendRecipeDetailAPIRequest();
             })(i);
