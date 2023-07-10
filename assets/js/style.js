@@ -105,8 +105,15 @@ const s_recipeBookContainer = document.querySelector("#recipe-book-container");
 s_recipeBookIcon.addEventListener("click", function () {
 
     console.log("lol");
-    s_recipeBookContainer.style.display = "block";
-    // s_recipeBookContainer.style.opacity = 1;
+    s_recipeBookContainer.style.display = "flex";
+
+    //Fade in effect
+    setTimeout(function () {
+
+        s_recipeBookContainer.style.opacity = 1;
+
+    }, 100);
+
 
 });
 
