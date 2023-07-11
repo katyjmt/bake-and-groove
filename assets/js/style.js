@@ -102,6 +102,17 @@ s_logo.addEventListener("click", function () {
 const s_recipeBookIcon = document.querySelector("#recipe-book-icon");
 const s_recipeBookContainer = document.querySelector("#recipe-book-container");
 const s_exitNav = document.querySelector("#exit-nav");
+const s_historyList = document.querySelector("#history-list");
+
+let history = {
+
+    search: [],
+    timestamp: [],
+
+}
+
+// get local storage
+// for loop >> put each object on page
 
 s_recipeBookIcon.addEventListener("click", function () {
 
@@ -114,6 +125,27 @@ s_recipeBookIcon.addEventListener("click", function () {
 
     }, 10);
 
+    //print "No history available" in the history list if there's no localStorage items
+    if (localStorage.getItem("history") === null) {
+
+        historyListItem = document.createElement("li");
+        historyListItem.textContent = "No history available";
+
+        s_historyList.append(historyListItem);
+
+    } else {
+
+        //populate search history
+        for (let i = 0; i < history.search.length; i++) {
+
+            historyListItem = document.createElement("li");
+            historyListItem.textContent = history.search[i];
+
+            s_historyList.append(historyListItem);
+
+        }
+
+    }
 
 });
 
@@ -128,6 +160,14 @@ s_exitNav.addEventListener("click", function () {
 
     }, 1000);
 
+    //clear search history
+
+    while (s_historyList.children[0]) {
+
+        s_historyList.children[0].remove();
+
+    }
+
 });
 
 s_recipeBookIcon.addEventListener("mouseover", function () {
@@ -141,4 +181,18 @@ s_recipeBookIcon.addEventListener("mouseleave", function () {
     s_recipeBookIcon.setAttribute("class", "fa-solid fa-book nav-icon nav-icon-p");
 
 });
+
+//EVENT LISTENER: ONCLICK RECIPE OPTION
+
+// x.addEventListener("click", function () {
+
+//     //store input value in var
+//     //put var in localStorage array
+//     // >>get localStorage, convert to array, add var to array, convert array to json, set localstorage
+
+
+
+// });
+
+//EVENT LISTENER: ONCLICK RECIPE BOOK
 
