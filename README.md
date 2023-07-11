@@ -51,7 +51,7 @@ This application is for anyone that is unsure of what to cook, and needs a littl
 
 ## References
 
-Splash Page Image (<https://cdn.shopify.com/s/files/1/0070/7032/files/food-photgraphy-tips.png?format=jpg&quality=90&v=1657891849>)
+Splash Page Image (<https://cdn.shopify.com/s/files/1/0070/7032/files/food-photgraphy-tips.png?format=jpg&quality=90&v=1657891849>)<br>
 Moose image (<https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtTVX0dGqBv1RVgdAdiwLC9-uoewTvOpPlgQ&usqp=CAU>)
 
 ### Frameworks
