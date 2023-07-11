@@ -5,7 +5,7 @@
 ## Table of Contents
 
 1. [Introduction](#introduction)
-2. [Developer Comments](#developer-comments)
+2. [Description](#description)
 3. [Deployed Application](#deployed-application)
 4. [References](#references)
 5. [Creators](#creators)
@@ -39,9 +39,11 @@ Have a clean repository that meets quality coding standards (file structure, nam
 Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 ```
 
-## Developer Comments
+## Description
 
+This application is for anyone that is unsure of what to cook, and needs a little bit of inspiration to get started.  The user can select a type of cuisine and choose from one of many recipe options.  Your choice will be accompanied by a groovin' playlist to match your taste buds.  Just tap that mouse button and get groovin' brother.
 
+![Groovin' moose](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtTVX0dGqBv1RVgdAdiwLC9-uoewTvOpPlgQ&usqp=CAU)
 
 ## Deployed Application
 
@@ -49,7 +51,8 @@ Have a quality README (with unique name, description, technologies used, screens
 
 ## References
 
-Splash Page Image (<https://cdn.shopify.com/s/files/1/0070/7032/files/food-photgraphy-tips.png?format=jpg&quality=90&v=1657891849>)
+Splash Page Image (<https://cdn.shopify.com/s/files/1/0070/7032/files/food-photgraphy-tips.png?format=jpg&quality=90&v=1657891849>)<br>
+Moose image (<https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtTVX0dGqBv1RVgdAdiwLC9-uoewTvOpPlgQ&usqp=CAU>)
 
 ### Frameworks
 
@@ -57,15 +60,15 @@ Tailwind (<https://cdn.tailwindcss.com>)
 
 ### API
 
-Spotify (<https://developer.spotify.com/>)
-MealAPI (<https://www.themealdb.com/>)
+Spotify (<https://developer.spotify.com/>)<br>
+MealAPI (<https://www.themealdb.com/>)<br>
 Fontawesome (<https://fontawesome.com/>)
 
 ## Creators
 
-**katyjmt** : <https://github.com/katyjmt>
-**txngyn** : <https://github.com/txngyn>
-**Tanyauu** : <https://github.com/tanyauu>
+**katyjmt** : <https://github.com/katyjmt><br>
+**txngyn** : <https://github.com/txngyn><br>
+**Tanyauu** : <https://github.com/tanyauu><br>
 **x4ndez** : <https://github.com/x4ndez>
 
 ## License
