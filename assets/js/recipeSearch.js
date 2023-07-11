@@ -3,6 +3,8 @@ const $recipeAreas = $('#recipe-areas'); // Select page 2 datalist dropdown with
 const $recipeAreaInput = $('#area-input'); // Select input field for area
 const $generateRecipeButton = $('#generate-recipe');
 const $recipeContainer = $('#recipe-container'); // Select recipe container div within modal
+const $ingredientsEl = $('#ingredients'); // Select ingredients container div on page 3
+const $methodEl = $('#method'); // Select method container div on page 3
 
 // Set up variables to add data to
 const areaList = []; // List of available areas from API
@@ -27,61 +29,7 @@ async function sendAreaAPIRequest () {
     }
 }
 sendAreaAPIRequest();
-// {
-//     "idMeal": "52946",
-//     "strMeal": "Kung Po Prawns",
-//     "strDrinkAlternate": null,
-//     "strCategory": "Seafood",
-//     "strArea": "Chinese",
-//     "strInstructions": "Mix the cornflour and 1 tbsp soy sauce, toss in the prawns and set aside for 10 mins. Stir the vinegar, remaining soy sauce, tomato purée, sugar and 2 tbsp water together to make a sauce.\r\n\r\nWhen you’re ready to cook, heat a large frying pan or wok until very hot, then add 1 tbsp oil. Fry the prawns until they are golden in places and have opened out– then tip them out of the pan.\r\n\r\nHeat the remaining oil and add the peanuts, chillies and water chestnuts. Stir-fry for 2 mins or until the peanuts start to colour, then add the ginger and garlic and fry for 1 more min. Tip in the prawns and sauce and simmer for 2 mins until thickened slightly. Serve with rice.",
-//     "strMealThumb": "https://www.themealdb.com/images/media/meals/1525873040.jpg",
-//     "strTags": "BBQ",
-//     "strYoutube": "https://www.youtube.com/watch?v=ysiuZm9FIxs",
-//     "strIngredient1": "Prawns",
-//     "strIngredient2": "Soy Sauce",
-//     "strIngredient3": "Tomato Puree",
-//     "strIngredient4": "Corn Flour",
-//     "strIngredient5": "Caster Sugar",
-//     "strIngredient6": "Sunflower Oil",
-//     "strIngredient7": "Peanuts",
-//     "strIngredient8": "Chilli",
-//     "strIngredient9": "Brown Sugar",
-//     "strIngredient10": "Garlic Clove",
-//     "strIngredient11": "Water Chestnut",
-//     "strIngredient12": "Ginger",
-//     "strIngredient13": "",
-//     "strIngredient14": "",
-//     "strIngredient15": "",
-//     "strIngredient16": "",
-//     "strIngredient17": "",
-//     "strIngredient18": "",
-//     "strIngredient19": "",
-//     "strIngredient20": "",
-//     "strMeasure1": "400g",
-//     "strMeasure2": "2 tbs",
-//     "strMeasure3": "1 tsp ",
-//     "strMeasure4": "1 tsp ",
-//     "strMeasure5": "1 tsp ",
-//     "strMeasure6": "1 tsp ",
-//     "strMeasure7": "85g",
-//     "strMeasure8": "3 Large",
-//     "strMeasure9": "1 tbs",
-//     "strMeasure10": "6 cloves",
-//     "strMeasure11": "450g",
-//     "strMeasure12": "to taste",
-//     "strMeasure13": "",
-//     "strMeasure14": "",
-//     "strMeasure15": "",
-//     "strMeasure16": "",
-//     "strMeasure17": "",
-//     "strMeasure18": "",
-//     "strMeasure19": "",
-//     "strMeasure20": "",
-//     "strSource": "https://www.bbcgoodfood.com/recipes/1415664/kung-po-prawns",
-//     "strImageSource": null,
-//     "strCreativeCommonsConfirmed": null,
-//     "dateModified": null
-// }
+
 
 // Function to add ingredient data to an array
 const getIngredientAndQuantityOfMeal = (meal) => {
@@ -161,7 +109,8 @@ $generateRecipeButton.on('click', async function(event) {
         const recipeTitle = mealData[i].meals[0].strMeal;
         const recipeImageURL = mealData[i].meals[0].strMealThumb;
         const recipeIngredients = getIngredientAndQuantityOfMeal(mealData[i].meals[0]);
-        const $recipeCardDivEl = $('<div>').addClass('w-1/3 recipe-card');
+        // console.log(recipeIngredients);
+        const $recipeCardDivEl = $('<div>').addClass('w-1/3 recipe-card p-3 m-3 bg-white').attr('title', recipeTitle);
         const $recipeTitleEl = $('<h3>').addClass('text-3xl text-center').append(recipeTitle);
         const $recipeImageEl = $('<img>').attr({
             src: recipeImageURL,
@@ -169,81 +118,29 @@ $generateRecipeButton.on('click', async function(event) {
         const $recipeButtonEl = $('<button>').addClass('select-recipe m-auto w-1/6 bg-purple-800').text('Select');
         $recipeCardDivEl.append($recipeTitleEl).append($recipeImageEl).append($recipeButtonEl);
         $recipeContainer.append($recipeCardDivEl); 
-        
     }
 })
 
-// On-click event listener for when user clicks on a recipe button
-// $recipeContainer.on('click', async function(event) {
-//     // Save recipe info from that button to storage (recipe title and timestamp)
+// let history = {
 
-// })
+//     search: [],
+//     timestamp: [],
 
-
-//LOGO EVENT LISTENER
-
-// const s_logo = document.querySelector("#logo-container");
-// const s_navbar = document.querySelector("nav");
-
-// s_logo.addEventListener("click", function () {
-
-//     window.location = "#page-02"; //go to page 02
-
-//     //make the navbar appear
-//     s_navbar.style.opacity = 1;
-
-//     //remove page 01 from document after 5 seconds
-//     setTimeout(function () {
-
-//         s_page01.remove();
-
-//     }, 5000);
-
-//     //fade in page-02 content
-//     const s_p2Content = document.querySelector("#page-02-content");
-
-//     setTimeout(function () {
-
-//         s_p2Content.style.opacity = 1;
-//         s_p2Content.style.paddingTop = 60 + "px";
-//         s_p2Content.style.paddingBottom = 60 + "px";
-
-//     }, 600);
-
-// });
-
-
-// // Asynchronous function to fetch data from the Edamam API
-// async function sendMealAPIRequest() {
-//     const API_URL = "https://api.edamam.com/api/recipes/v2";
-//     let query = "pizza";
-//     let dataType = "public";
-    
-//     let response = await fetch(`${API_URL}?app_id=${APP_ID}&app_key=${API_KEY}&q=${query}&type=${dataType}`);
-//     console.log(response);
-//     let data = await response.json();
-//     console.log(data);
-//     recipeData.push(data);
-//     // Use data[i]._links.next.href to obtain URL for next page and push data from each to recipeData variable
-//     for (i = 0; i < 49; i++) { // first 20 results already generated, so only need 49 more iterations
-//         let nextResponse = await fetch(recipeData[i]._links.next.href);
-//         console.log(response);
-//         let nextData = await nextResponse.json();
-//         console.log(nextData);
-//         recipeData.push(nextData);
-//     }
-//     // Generate three random numbers between 1 and 1000 (# results) as recipes to display on page
-//     for (i = 0; i < 3; i++) {
-//         let randomIndex = Math.floor(Math.random() * 1000);
-//         console.log(randomIndex);
-//     }
 // }
 
-// sendEdamamRequest();
+// On-click event listener for when user clicks on a recipe button
+$recipeContainer.on('click', '.recipe-card', function(e) {
+    // Push recipe title and dayJS timestamp to history object
+    history.search.push(this.title);
+    let timestampNow = dayjs().format('dddd D MMMM YYYY');
+    console.log(timestampNow);
+    history.timestamp.push(timestampNow);
+    // Save recipe info from that button to storage (recipe title and timestamp)
+    localStorage.setItem("history", JSON.stringify(history));
+    // Populate ingredient data on page 3
+    // Popuate method data on page 3
+    // Move location to page 3
+    window.location = "#page-03";
+})
 
 
-// Return first set of data
-// Add to object
-// Use data[i]._links.next.href to obtain URL for next page
-// Use that URL in another request
-// Do this n times
