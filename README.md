@@ -43,6 +43,8 @@ Have a quality README (with unique name, description, technologies used, screens
 
 This application is for anyone that is unsure of what to cook, and needs a little bit of inspiration to get started.  The user can select a type of cuisine and choose from one of many recipe options.  Your choice will be accompanied by a groovin' playlist to match your taste buds.  Just tap that mouse button and get groovin' brother.
 
+![Groovin' moose](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtTVX0dGqBv1RVgdAdiwLC9-uoewTvOpPlgQ&usqp=CAU)
+
 ## Deployed Application
 
 <https://katyjmt.github.io/bake-and-groove/>
@@ -50,6 +52,7 @@ This application is for anyone that is unsure of what to cook, and needs a littl
 ## References
 
 Splash Page Image (<https://cdn.shopify.com/s/files/1/0070/7032/files/food-photgraphy-tips.png?format=jpg&quality=90&v=1657891849>)
+Moose image (<https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtTVX0dGqBv1RVgdAdiwLC9-uoewTvOpPlgQ&usqp=CAU>)
 
 ### Frameworks
 
