@@ -60,8 +60,8 @@ Tailwind (<https://cdn.tailwindcss.com>)
 
 ### API
 
-Spotify (<https://developer.spotify.com/>)
-MealAPI (<https://www.themealdb.com/>)
+Spotify (<https://developer.spotify.com/>)<br>
+MealAPI (<https://www.themealdb.com/>)<br>
 Fontawesome (<https://fontawesome.com/>)
 
 ## Creators
