@@ -12,7 +12,13 @@ const areaList = []; // List of available areas from API
 let $areaSelected = ''; // User-selected area from dropdown
 let mealOptions = [];
 
-// Asynchronous function to fetch area data from the Edamam API and add to areaList variable
+// Get history object from local storage if it exists
+if (localStorage.getItem("history") !== null) {
+    history = JSON.parse(localStorage.getItem("history"));
+};
+
+
+// Asynchronous function to fetch area data from the Recipes API and add to areaList variable
 async function sendAreaAPIRequest () {
     let response = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list');
     console.log(response);
@@ -121,18 +127,11 @@ $generateRecipeButton.on('click', async function(event) {
     }
 })
 
-// let history = {
-
-//     search: [],
-//     timestamp: [],
-
-// }
-
 // On-click event listener for when user clicks on a recipe button
 $recipeContainer.on('click', '.recipe-card', function(e) {
     // Push recipe title and dayJS timestamp to history object
     history.search.push(this.title);
-    let timestampNow = dayjs().format('dddd D MMMM YYYY');
+    let timestampNow = dayjs().format('h:mA, dddd D MMMM YYYY');
     console.log(timestampNow);
     history.timestamp.push(timestampNow);
     // Save recipe info from that button to storage (recipe title and timestamp)
