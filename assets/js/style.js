@@ -77,12 +77,12 @@ s_logo.addEventListener("click", function () {
     //make the navbar appear
     s_navbar.style.opacity = 1;
 
-    //remove page 01 from document after 5 seconds
-    setTimeout(function () {
+    //remove page 01 from document after 3 seconds
+    // setTimeout(function () {
 
-        s_page01.remove();
+    //     s_page01.remove();
 
-    }, 5000);
+    // }, 3000);
 
     //fade in page-02 content
     const s_p2Content = document.querySelector("#page-02-content");
@@ -99,16 +99,46 @@ s_logo.addEventListener("click", function () {
 
 //RECIPE BOOK
 
-const s_recipeBook = document.querySelector("#recipe-book");
+const s_recipeBookIcon = document.querySelector("#recipe-book-icon");
+const s_recipeBookContainer = document.querySelector("#recipe-book-container");
+const s_exitNav = document.querySelector("#exit-nav");
 
-s_recipeBook.addEventListener("mouseover", function () {
+s_recipeBookIcon.addEventListener("click", function () {
 
-    s_recipeBook.setAttribute("class", "fa-solid fa-book-open");
+    s_recipeBookContainer.style.display = "block";
+
+    //Fade in effect
+    setTimeout(function () {
+
+        s_recipeBookContainer.style.opacity = 1;
+
+    }, 10);
+
 
 });
 
-s_recipeBook.addEventListener("mouseleave", function () {
+s_exitNav.addEventListener("click", function () {
 
-    s_recipeBook.setAttribute("class", "fa-solid fa-book");
+    //Fade out effect
+    s_recipeBookContainer.style.opacity = 0;
+
+    setTimeout(function () {
+
+        s_recipeBookContainer.style.display = "none";
+
+    }, 1000);
 
 });
+
+s_recipeBookIcon.addEventListener("mouseover", function () {
+
+    s_recipeBookIcon.setAttribute("class", "fa-solid fa-book-open nav-icon nav-icon-p");
+
+});
+
+s_recipeBookIcon.addEventListener("mouseleave", function () {
+
+    s_recipeBookIcon.setAttribute("class", "fa-solid fa-book nav-icon nav-icon-p");
+
+});
+
