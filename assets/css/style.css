@@ -301,32 +301,6 @@ h2 {
 
 }
 
-/* To be deleted later ->>>>*/
-
-#recipe-name {
-
-    background-color: purple;
-
-}
-
-#ingredients {
-
-    background-color: red;
-
-}
-
-#method {
-
-    background-color: grey;
-
-}
-
-#spotify-container {
-
-    background-color: greenyellow;
-
-}
-
 #recipe-options-modal {
 
     border-radius: 1rem;
@@ -338,6 +312,38 @@ h2 {
     padding: 2rem;
 
 }
+
+#recipe-container div {
+
+    border-radius: 1rem;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 2rem;
+    cursor: pointer;
+    transform: scale(1.0);
+
+    transition: transform 0.5s;
+
+}
+
+#recipe-container div:hover {
+
+    transform: scale(1.2);
+
+}
+
+#recipe-container div h3 {
+
+    padding-bottom: 1rem;
+
+}
+
+#recipe-container div img {
+
+    border-radius: 1rem;
+
+}
+
 
 @keyframes pulse {
 
