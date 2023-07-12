@@ -243,7 +243,6 @@ h2 {
 
 #page-03 {
 
-    background-color: orange;
     padding-top: var(--nav-height);
 
 }
@@ -272,18 +271,46 @@ h2 {
 .col-02 {
 
     width: 30vw;
+    background-color: #ff9900;
 
 }
 
 .col-01 {
 
     width: 20vw;
+    background-color: #ffb23d;
+
+}
+
+.section {
+
+    border-radius: 1rem;
+    margin: 1rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    color: white;
+
+}
+
+.section ul {
+
+    padding-left: 2rem;
+    list-style: disc;
+    line-height: 2rem;
+
+}
+
+#spotify-container {
+
+    border-radius: 1rem;
+    margin: 1rem;
 
 }
 
 .row-full {
 
-    height: 90vh;
+    height: 80vh;
+
 
 }
 
