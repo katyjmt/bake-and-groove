@@ -5,7 +5,7 @@ const $generateRecipeButton = $('#generate-recipe');
 const $recipeContainer = $('#recipe-container'); // Select recipe container div within modal
 const $ingredientsEl = $('#ingredients-list'); // Select ingredients <ul> on page 3
 const $methodEl = $('#method'); // Select method container div on page 3
-const $exitModal = $('#exit-modal');
+const $exitModal = $('#exit-modal'); // Select exit button of recipe modal
 const $recipeModal = $('#recipe-options-modal'); // Select recipe modal
 
 // Set up variables to add data to
@@ -165,6 +165,10 @@ $recipeContainer.on('click', '.recipe-card', function (e) {
 
 $exitModal.on('click', function () {
 
+    //hide the modal
     $recipeModal.removeClass('block').addClass('hidden');
+
+    //remove all contents of the container upon exit, so new items can be added upon next api call
+    $recipeContainer.empty();
 
 });
