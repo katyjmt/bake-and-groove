@@ -63,7 +63,7 @@ for (i = 0; i < sArray_boxyBox.length; i++) {
 
 }
 
-//LOGO EVENT LISTENER
+//EVENT LISTENER: onClick of the logo on page 01
 
 const s_logo = document.querySelector("#logo-container");
 const s_navbar = document.querySelector("nav");
@@ -109,11 +109,12 @@ let history = {
 
 }
 
+//EVENT LISTENER: onClick of the recipe book icon
 s_recipeBookIcon.addEventListener("click", function () {
 
     s_recipeBookContainer.style.display = "block";
 
-    //Fade in effect
+    //Make the recipe book modal appear with a fade in effect
     setTimeout(function () {
 
         s_recipeBookContainer.style.opacity = 1;
@@ -130,7 +131,7 @@ s_recipeBookIcon.addEventListener("click", function () {
 
     } else {
 
-        //populate search history
+        //populate search history if there is anything in the localStorage
         for (let i = 0; i < history.search.length; i++) {
 
             historyListItem = document.createElement("li");
@@ -144,11 +145,13 @@ s_recipeBookIcon.addEventListener("click", function () {
 
 });
 
+// EVENT LISTENER: onClick for the exit icon of the recipe book modal
 s_exitNav.addEventListener("click", function () {
 
     //Fade out effect
     s_recipeBookContainer.style.opacity = 0;
 
+    //waits 1s for fade out before setting display to "none"
     setTimeout(function () {
 
         s_recipeBookContainer.style.display = "none";
@@ -165,6 +168,7 @@ s_exitNav.addEventListener("click", function () {
 
 });
 
+//Hover events to change the recipe book icon
 s_recipeBookIcon.addEventListener("mouseover", function () {
 
     s_recipeBookIcon.setAttribute("class", "fa-solid fa-book-open nav-icon nav-icon-p");
@@ -176,18 +180,3 @@ s_recipeBookIcon.addEventListener("mouseleave", function () {
     s_recipeBookIcon.setAttribute("class", "fa-solid fa-book nav-icon nav-icon-p");
 
 });
-
-//EVENT LISTENER: ONCLICK RECIPE OPTION
-
-// x.addEventListener("click", function () {
-
-//     //store input value in var
-//     //put var in localStorage array
-//     // >>get localStorage, convert to array, add var to array, convert array to json, set localstorage
-
-
-
-// });
-
-//EVENT LISTENER: ONCLICK RECIPE BOOK
-
