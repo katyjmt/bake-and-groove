@@ -3,14 +3,15 @@ const $recipeAreas = $('#recipe-areas'); // Select page 2 datalist dropdown with
 const $recipeAreaInput = $('#area-input'); // Select input field for area
 const $generateRecipeButton = $('#generate-recipe');
 const $recipeContainer = $('#recipe-container'); // Select recipe container div within modal
-const $ingredientsEl = $('#ingredients'); // Select ingredients container div on page 3
+const $ingredientsEl = $('#ingredients-list'); // Select ingredients <ul> on page 3
 const $methodEl = $('#method'); // Select method container div on page 3
 
 // Set up variables to add data to
 const areaList = []; // List of available areas from API
-// const chosenRecipes = [];
 let $areaSelected = ''; // User-selected area from dropdown
-let mealOptions = [];
+let mealData = []; // Array to hold different options available to user based on cuisine type selection
+let cuisineRecipesIngredientsList = []; // Empty array to populate with ingredients lists from recipes from selected cuisine type
+let ingredientsData = []; // Empty array to hold ingredient items
 
 // Get history object from local storage if it exists
 if (localStorage.getItem("history") !== null) {
@@ -73,7 +74,6 @@ const getIngredientAndQuantityOfMeal = (meal) => {
             ingredient[number].quantity = value;
         }
     }
-    console.log(ingredient);
     return ingredient;
     
 }
@@ -106,7 +106,7 @@ $generateRecipeButton.on('click', async function(event) {
         mealDataArr.push(request.json());
     }
 
-    const mealData = await Promise.all(mealDataArr);
+    mealData = await Promise.all(mealDataArr);
     console.log(mealData)
 
     // Populate recipe cards in modal
@@ -115,14 +115,15 @@ $generateRecipeButton.on('click', async function(event) {
         const recipeTitle = mealData[i].meals[0].strMeal;
         const recipeImageURL = mealData[i].meals[0].strMealThumb;
         const recipeIngredients = getIngredientAndQuantityOfMeal(mealData[i].meals[0]);
+        cuisineRecipesIngredientsList.push(recipeIngredients);
         // console.log(recipeIngredients);
-        const $recipeCardDivEl = $('<div>').addClass('w-1/3 recipe-card p-3 m-3 bg-white').attr('title', recipeTitle);
+        const $recipeCardDivEl = $('<div>').addClass('w-1/3 recipe-card p-3 m-3 bg-white').attr({ title: recipeTitle, id: i });
         const $recipeTitleEl = $('<h3>').addClass('text-3xl text-center').append(recipeTitle);
         const $recipeImageEl = $('<img>').attr({
             src: recipeImageURL,
           });
-        const $recipeButtonEl = $('<button>').addClass('select-recipe m-auto w-1/6 bg-purple-800').text('Select');
-        $recipeCardDivEl.append($recipeTitleEl).append($recipeImageEl).append($recipeButtonEl);
+        // const $recipeButtonEl = $('<button>').addClass('select-recipe m-auto w-1/6 bg-purple-800').text('Select');
+        $recipeCardDivEl.append($recipeTitleEl).append($recipeImageEl);
         $recipeContainer.append($recipeCardDivEl); 
     }
 })
@@ -136,8 +137,27 @@ $recipeContainer.on('click', '.recipe-card', function(e) {
     history.timestamp.push(timestampNow);
     // Save recipe info from that button to storage (recipe title and timestamp)
     localStorage.setItem("history", JSON.stringify(history));
-    // Populate ingredient data on page 3
+    // Populate ingredientsData array with qty and ingredients
+    let currentRecipeId = this.id;
+    cuisineRecipesIngredientsList[currentRecipeId].forEach(element => {
+        if (element.name && element.name !== '') {
+            const formattedIngredient = `${element.quantity} ${element.name}`;
+            ingredientsData.push(formattedIngredient);
+        }
+    });
+    // Loop through ingredientsData array and populate bullet points on Ingredients section on page 3
+    for (let i = 0; i < ingredientsData.length; i++) {
+        const $ingredientLi = $('<li>');
+        $ingredientLi.text(ingredientsData[i]);
+        $ingredientsEl.append($ingredientLi);
+    }
+
     // Popuate method data on page 3
+    const $methodDetailsEl = $('<p>');
+    const $methodData = mealData[currentRecipeId].meals[0].strInstructions;
+    $methodDetailsEl.text($methodData);
+    $methodEl.append($methodDetailsEl);
+
     // Move location to page 3
     window.location = "#page-03";
 })
