@@ -36,30 +36,28 @@ for (i = 0; i < sArray_boxyBox.length; i++) {
 
     sArray_boxyBox[i].addEventListener("mouseover", function (e) {
 
-        let fadeLevel = fadeInitialLevel;
+        let fadeLevel = fadeInitialLevel; //see "fadeInitialLevel" variable above
 
         setTimeout(function () {
 
-            e.target.style.opacity = fadeLevel;
+            e.target.style.opacity = fadeLevel; //on hover >> set opacity of the box from 0 to the fadeInitialLevel
 
             let effectFadeDown = setInterval(function () {
 
-                if (fadeLevel <= 0) {
+                if (fadeLevel <= 0) { //if the opacity of the box is 0, then stop the interval loop
 
                     clearInterval(effectFadeDown);
 
-                } else if (fadeLevel > 0) {
+                } else if (fadeLevel > 0) { //if the opacity of the box is greater than 0, continue decreasing the opacity by 0.05.
 
-                    fadeLevel = fadeLevel - 0.05;
-                    e.target.style.opacity = fadeLevel;
+                    fadeLevel = fadeLevel - 0.05; //remove 0.05 from opacity
+                    e.target.style.opacity = fadeLevel; //set the new level of opacity to the box
 
                 }
 
             }, 100);
 
         }, fadeInDelay, fadeLevel);
-
-
 
     });
 
@@ -78,13 +76,13 @@ s_logo.addEventListener("click", function () {
     s_navbar.style.opacity = 1;
 
     //remove page 01 from document after 3 seconds
-    // setTimeout(function () {
+    setTimeout(function () {
 
-    //     s_page01.remove();
+        s_page01.remove();
 
-    // }, 3000);
+    }, 3000);
 
-    //fade in page-02 content
+    // fade in page-02 content
     const s_p2Content = document.querySelector("#page-02-content");
 
     setTimeout(function () {
@@ -110,9 +108,6 @@ let history = {
     timestamp: [],
 
 }
-
-// get local storage
-// for loop >> put each object on page
 
 s_recipeBookIcon.addEventListener("click", function () {
 
