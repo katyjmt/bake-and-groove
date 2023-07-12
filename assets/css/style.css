@@ -344,6 +344,27 @@ h2 {
 
 }
 
+#recipe-modal-content {
+
+    position: relative;
+
+}
+
+#recipe-modal-content h2 {
+
+    float: left;
+
+}
+
+#exit-modal {
+
+    float: right;
+    position: sticky;
+    top: 0;
+    max-width: 10%;
+
+}
+
 
 @keyframes pulse {
 
