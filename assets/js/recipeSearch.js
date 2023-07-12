@@ -5,6 +5,8 @@ const $generateRecipeButton = $('#generate-recipe');
 const $recipeContainer = $('#recipe-container'); // Select recipe container div within modal
 const $ingredientsEl = $('#ingredients-list'); // Select ingredients <ul> on page 3
 const $methodEl = $('#method'); // Select method container div on page 3
+const $exitModal = $('#exit-modal'); // Select exit button of recipe modal
+const $recipeModal = $('#recipe-options-modal'); // Select recipe modal
 
 // Set up variables to add data to
 const areaList = []; // List of available areas from API
@@ -20,7 +22,7 @@ if (localStorage.getItem("history") !== null) {
 
 
 // Asynchronous function to fetch area data from the Recipes API and add to areaList variable
-async function sendAreaAPIRequest () {
+async function sendAreaAPIRequest() {
     let response = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list');
     console.log(response);
     let data = await response.json();
@@ -75,18 +77,17 @@ const getIngredientAndQuantityOfMeal = (meal) => {
         }
     }
     return ingredient;
-    
+
 }
 
 // Event listener to trigger asynchronous function to fetch recipes using user-selected Area
-$generateRecipeButton.on('click', async function(event) {
+$generateRecipeButton.on('click', async function (event) {
     event.preventDefault();
     // Update modal class to display:block
-    const $recipeModal = $('#recipe-options-modal'); // Select recipe modal
     $recipeModal.removeClass('hidden').addClass('block');
 
     $areaSelected = $recipeAreaInput.val();
-     
+
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${$areaSelected}`)
     console.log(response);
     const data = await response.json();
@@ -121,15 +122,15 @@ $generateRecipeButton.on('click', async function(event) {
         const $recipeTitleEl = $('<h3>').addClass('text-3xl text-center').append(recipeTitle);
         const $recipeImageEl = $('<img>').attr({
             src: recipeImageURL,
-          });
+        });
         // const $recipeButtonEl = $('<button>').addClass('select-recipe m-auto w-1/6 bg-purple-800').text('Select');
         $recipeCardDivEl.append($recipeTitleEl).append($recipeImageEl);
-        $recipeContainer.append($recipeCardDivEl); 
+        $recipeContainer.append($recipeCardDivEl);
     }
 })
 
 // On-click event listener for when user clicks on a recipe button
-$recipeContainer.on('click', '.recipe-card', function(e) {
+$recipeContainer.on('click', '.recipe-card', function (e) {
     // Push recipe title and dayJS timestamp to history object
     history.search.push(this.title);
     let timestampNow = dayjs().format('h:mA, dddd D MMMM YYYY');
@@ -162,4 +163,12 @@ $recipeContainer.on('click', '.recipe-card', function(e) {
     window.location = "#page-03";
 })
 
+$exitModal.on('click', function () {
 
+    //hide the modal
+    $recipeModal.removeClass('block').addClass('hidden');
+
+    //remove all contents of the container upon exit, so new items can be added upon next api call
+    $recipeContainer.empty();
+
+});
