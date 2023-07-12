@@ -62,7 +62,9 @@ Tailwind (<https://cdn.tailwindcss.com>)
 
 Spotify (<https://developer.spotify.com/>)<br>
 MealAPI (<https://www.themealdb.com/>)<br>
-Fontawesome (<https://fontawesome.com/>)
+Fontawesome (<https://fontawesome.com/>)<br>
+jQuery (<https://api.jquery.com/>)<br>
+dayjs (<https://day.js.org/>)
 
 ## Creators
 
