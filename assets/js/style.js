@@ -124,7 +124,7 @@ s_recipeBookIcon.addEventListener("click", function () {
     //print "No history available" in the history list if there's no localStorage items
     if (localStorage.getItem("history") === null) {
 
-        historyListItem = document.createElement("li");
+        let historyListItem = document.createElement("li");
         historyListItem.textContent = "No history available";
 
         s_historyList.append(historyListItem);
@@ -134,7 +134,7 @@ s_recipeBookIcon.addEventListener("click", function () {
         //populate search history if there is anything in the localStorage
         for (let i = 0; i < history.search.length; i++) {
 
-            historyListItem = document.createElement("li");
+            let historyListItem = document.createElement("li");
             historyListItem.textContent = history.search[i];
 
             s_historyList.append(historyListItem);
