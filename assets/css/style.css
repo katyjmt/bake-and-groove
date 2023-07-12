@@ -327,6 +327,18 @@ h2 {
 
 }
 
+#recipe-options-modal {
+
+    border-radius: 1rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    padding: 2rem;
+
+}
+
 @keyframes pulse {
 
     0% {
