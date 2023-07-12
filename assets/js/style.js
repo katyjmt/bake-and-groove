@@ -36,22 +36,22 @@ for (i = 0; i < sArray_boxyBox.length; i++) {
 
     sArray_boxyBox[i].addEventListener("mouseover", function (e) {
 
-        let fadeLevel = fadeInitialLevel;
+        let fadeLevel = fadeInitialLevel; //see "fadeInitialLevel" variable above
 
         setTimeout(function () {
 
-            e.target.style.opacity = fadeLevel;
+            e.target.style.opacity = fadeLevel; //on hover >> set opacity of the box from 0 to the fadeInitialLevel
 
             let effectFadeDown = setInterval(function () {
 
-                if (fadeLevel <= 0) {
+                if (fadeLevel <= 0) { //if the opacity of the box is 0, then stop the interval loop
 
                     clearInterval(effectFadeDown);
 
-                } else if (fadeLevel > 0) {
+                } else if (fadeLevel > 0) { //if the opacity of the box is greater than 0, continue decreasing the opacity by 0.05.
 
-                    fadeLevel = fadeLevel - 0.05;
-                    e.target.style.opacity = fadeLevel;
+                    fadeLevel = fadeLevel - 0.05; //remove 0.05 from opacity
+                    e.target.style.opacity = fadeLevel; //set the new level of opacity to the box
 
                 }
 
@@ -59,13 +59,11 @@ for (i = 0; i < sArray_boxyBox.length; i++) {
 
         }, fadeInDelay, fadeLevel);
 
-
-
     });
 
 }
 
-//LOGO EVENT LISTENER
+//EVENT LISTENER: onClick of the logo on page 01
 
 const s_logo = document.querySelector("#logo-container");
 const s_navbar = document.querySelector("nav");
@@ -78,13 +76,13 @@ s_logo.addEventListener("click", function () {
     s_navbar.style.opacity = 1;
 
     //remove page 01 from document after 3 seconds
-    // setTimeout(function () {
+    setTimeout(function () {
 
-    //     s_page01.remove();
+        s_page01.remove();
 
-    // }, 3000);
+    }, 3000);
 
-    //fade in page-02 content
+    // fade in page-02 content
     const s_p2Content = document.querySelector("#page-02-content");
 
     setTimeout(function () {
@@ -111,14 +109,12 @@ let history = {
 
 }
 
-// get local storage
-// for loop >> put each object on page
-
+//EVENT LISTENER: onClick of the recipe book icon
 s_recipeBookIcon.addEventListener("click", function () {
 
     s_recipeBookContainer.style.display = "block";
 
-    //Fade in effect
+    //Make the recipe book modal appear with a fade in effect
     setTimeout(function () {
 
         s_recipeBookContainer.style.opacity = 1;
@@ -128,17 +124,17 @@ s_recipeBookIcon.addEventListener("click", function () {
     //print "No history available" in the history list if there's no localStorage items
     if (localStorage.getItem("history") === null) {
 
-        historyListItem = document.createElement("li");
+        let historyListItem = document.createElement("li");
         historyListItem.textContent = "No history available";
 
         s_historyList.append(historyListItem);
 
     } else {
 
-        //populate search history
+        //populate search history if there is anything in the localStorage
         for (let i = 0; i < history.search.length; i++) {
 
-            historyListItem = document.createElement("li");
+            let historyListItem = document.createElement("li");
             historyListItem.textContent = history.search[i];
 
             s_historyList.append(historyListItem);
@@ -149,11 +145,13 @@ s_recipeBookIcon.addEventListener("click", function () {
 
 });
 
+// EVENT LISTENER: onClick for the exit icon of the recipe book modal
 s_exitNav.addEventListener("click", function () {
 
     //Fade out effect
     s_recipeBookContainer.style.opacity = 0;
 
+    //waits 1s for fade out before setting display to "none"
     setTimeout(function () {
 
         s_recipeBookContainer.style.display = "none";
@@ -170,6 +168,7 @@ s_exitNav.addEventListener("click", function () {
 
 });
 
+//Hover events to change the recipe book icon
 s_recipeBookIcon.addEventListener("mouseover", function () {
 
     s_recipeBookIcon.setAttribute("class", "fa-solid fa-book-open nav-icon nav-icon-p");
@@ -181,18 +180,3 @@ s_recipeBookIcon.addEventListener("mouseleave", function () {
     s_recipeBookIcon.setAttribute("class", "fa-solid fa-book nav-icon nav-icon-p");
 
 });
-
-//EVENT LISTENER: ONCLICK RECIPE OPTION
-
-// x.addEventListener("click", function () {
-
-//     //store input value in var
-//     //put var in localStorage array
-//     // >>get localStorage, convert to array, add var to array, convert array to json, set localstorage
-
-
-
-// });
-
-//EVENT LISTENER: ONCLICK RECIPE BOOK
-
