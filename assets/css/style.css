@@ -193,6 +193,11 @@ nav :nth-child(3) {
 
 }
 
+#recipe-book-icon {
+    font-size: 4rem;
+}
+
+
 /* PAGE O1 - SPLASH PAGE */
 
 /* Container setup for the box effect */
@@ -236,8 +241,8 @@ nav :nth-child(3) {
 
 #logo-nav {
 
-    width: 5rem;
-    height: 5rem;
+    width: 130px;
+    height: auto;
     max-height: 100%;
 
 }
@@ -353,20 +358,24 @@ nav :nth-child(3) {
 
 .col-01 {
 
-    width: 20vw;
+    width: 30vw;
     background-color: #ffb23d;
 
 }
 
 .col-02 {
 
-    width: 30vw;
+    width: 40vw;
     background-color: #ff9900;
 
 }
 
 .col-03 {
-    width: 50vw;
+    width: 30vw;
+}
+
+.col-recipe {
+    width: 70vw;
 }
 
 .section {

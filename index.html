@@ -80,21 +80,21 @@
             <!-- Autocomplete guide https://www.w3schools.com/howto/howto_js_autocomplete.asp -->
             <div id="page-02-content" class="flex flex-col p-8 rounded bg-amber-500 relative">
 
-                <h2 class="mb-5 text-white text-4xl tracking-widest">Choose your cuisine</h2>
+                <h2 class="mb-5 text-white text-4xl tracking-widest">BAKE 'N' GROOVE BABY...</h2>
+                <p class="text-white pb-5">Select a cuisine and we'll grab you some recipes to get your taste buds tingling.</p>
 
                 <form autocomplete="off">
 
                     <div class="autocomplete mb-2">
 
-                        <input id="area-input" list="recipe-areas" name="recipeArea" placeholder="Recipe Area"
+                        <input id="area-input" list="recipe-areas" name="recipeArea" placeholder="Select a cuisine"
                             class="bg-white p-2 rounded hover:shadow-md">
                         <datalist id="recipe-areas"></datalist>
 
                     </div>
 
                     <button id="generate-recipe" type="submit"
-                        class="p-2 rounded text-white hover:text-amber-200">Create
-                        Recipes</button>
+                        class="p-2 rounded text-white hover:text-amber-200 border-2 border-white rounded-lg mt-5">LET'S GO!</button>
 
                     <!-- <button id="surprise-me">Surprise Me</button> -->
 
@@ -122,18 +122,17 @@
         <div id="page-03" class="page bg-gradient-to-t from-amber-300 to-amber-200">
 
             <div id="page-03-container">
+                    <div id="ingredients" class="col-01 row-full section">
+                        <h2 class="font-bold text-2xl">Ingredients:</h2>
+                        <ul id="ingredients-list">
 
-                <div id="ingredients" class="col-01 row-full section">
-                    <h2 class="font-bold">Ingredients:</h2>
-                    <ul id="ingredients-list">
+                        </ul>
+                    </div>
 
-                    </ul>
-                </div>
+                    <div id="method" class="col-02 row-full section">
+                        <h2 class="font-bold text-2xl">Method:</h2>
 
-                <div id="method" class="col-02 row-full section">
-                    <h2 class="font-bold">Method:</h2>
-
-                </div>
+                    </div>
 
                 <div id="spotify-container" class="col-03 row-full">
                     <iframe style="border-radius:12px"
@@ -141,7 +140,6 @@
                         frameBorder="0" allowfullscreen=""
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                 </div>
-
             </div>
 
         </div>
@@ -152,7 +150,6 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="./assets/js/style.js"></script>
         <script src="./assets/js/recipeSearch.js"></script>
-        <script src="./assets/js/script.js"></script>
         <script src="https://kit.fontawesome.com/c669b4808b.js" crossorigin="anonymous"></script>
 
 </body>
